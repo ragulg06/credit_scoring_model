@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/1d79ac80-dcf5-43fc-a81c-6e0113813e41/resourceGroups/creditscoremodel/providers/Microsoft.Web/sites/creditscoremodel",
+    "appService.deploySubpath": "."
+}

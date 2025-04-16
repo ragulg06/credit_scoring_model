@@ -1,15 +1,16 @@
+# Use official Python image
 FROM python:3.12
 
 # Set working directory
 WORKDIR /app
 
-# Copy all files into the container
-COPY . .
+# Copy files into container
+COPY . /app
 
 # Install dependencies
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose Flask port
+# Expose the Flask port
 EXPOSE 5000
 
 # Run the Flask app
