@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Credit Risk Result</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
+        h1 { color: #2c3e50; text-align: center; }
+        .result-card { 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            padding: 20px; 
+            margin-top: 20px;
+            background-color: {% if result.prediction == 'Good Credit Risk' %}#d4edda{% else %}#f8d7da{% endif %};
+        }
+        .prediction { 
+            font-size: 24px; 
+            font-weight: bold; 
+            color: {% if result.prediction == 'Good Credit Risk' %}#155724{% else %}#721c24{% endif %};
+            text-align: center;
+        }
+        .probability { 
+            margin-top: 15px; 
+            font-size: 18px;
+        }
+        .confidence {
+            margin-top: 10px;
+            font-style: italic;
+        }
+        .back-btn { 
+            display: block; 
+            text-align: center; 
+            margin-top: 20px; 
+            color: #3498db; 
+            text-decoration: none;
+        }
+        .back-btn:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>Credit Risk Assessment Result</h1>
+    
+    <div class="result-card">
+        <div class="prediction">{{ result.prediction }}</div>
+        <div class="probability">Probability: {{ "%.2f"|format(result.probability * 100) }}%</div>
+        <div class="confidence">Confidence: {{ result.confidence }}</div>
+    </div>
+    
+    <a href="/" class="back-btn">Back to Assessment Form</a>
+</body>
+</html>
